@@ -31,11 +31,11 @@ const Navbar = () => {
   ];
 
   return (
-    <header className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${isScrolled ? 'bg-white/95 shadow-md backdrop-blur-sm' : 'bg-transparent'}`}>
-      <nav className="container mx-auto px-4 md:px-6 py-4 flex items-center justify-between">
+    <header className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${isScrolled ? 'glass-card py-3' : 'bg-transparent py-5'}`}>
+      <nav className="container mx-auto px-4 md:px-6 flex items-center justify-between">
         <div className="flex items-center">
-          <a href="#home" className="text-2xl font-bold text-muskan-dark">
-            <span className="text-muskan-primary">Muskan</span> Digital Studio
+          <a href="#home" className="text-2xl font-bold">
+            <span className="gradient-text">Muskan</span> <span className="text-gray-800">Digital Studio</span>
           </a>
         </div>
 
@@ -46,14 +46,14 @@ const Navbar = () => {
               <li key={link.name}>
                 <a 
                   href={link.href} 
-                  className="font-medium text-gray-700 hover:text-muskan-primary transition-colors"
+                  className="font-medium text-gray-700 hover:text-muskan-primary transition-colors animated-link"
                 >
                   {link.name}
                 </a>
               </li>
             ))}
           </ul>
-          <Button className="bg-muskan-primary hover:bg-muskan-tertiary text-white flex items-center gap-2">
+          <Button className="bg-gradient-to-r from-muskan-primary to-muskan-tertiary hover:shadow-lg text-white flex items-center gap-2 rounded-full px-6">
             <Phone className="h-4 w-4" />
             <span>Call Now</span>
           </Button>
@@ -70,10 +70,10 @@ const Navbar = () => {
 
       {/* Mobile Navigation Menu */}
       {isMenuOpen && (
-        <div className="md:hidden bg-white shadow-lg">
+        <div className="md:hidden glass-card py-2 animate-fade-in">
           <ul className="py-4">
-            {navLinks.map((link) => (
-              <li key={link.name} className="px-6 py-3">
+            {navLinks.map((link, index) => (
+              <li key={link.name} className="px-6 py-3" style={{ animationDelay: `${index * 0.05}s` }}>
                 <a 
                   href={link.href} 
                   className="font-medium text-gray-700 hover:text-muskan-primary transition-colors block"
@@ -84,7 +84,7 @@ const Navbar = () => {
               </li>
             ))}
             <li className="px-6 py-3">
-              <Button className="bg-muskan-primary hover:bg-muskan-tertiary text-white w-full flex items-center justify-center gap-2">
+              <Button className="bg-gradient-to-r from-muskan-primary to-muskan-tertiary hover:shadow-lg text-white w-full flex items-center justify-center gap-2 rounded-full">
                 <Phone className="h-4 w-4" />
                 <span>Call Now</span>
               </Button>

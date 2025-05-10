@@ -64,9 +64,9 @@ export default {
 					ring: 'hsl(var(--sidebar-ring))'
 				},
 				muskan: {
-					primary: '#9b87f5',
-					secondary: '#7E69AB',
-					tertiary: '#6E59A5',
+					primary: '#7667f1',
+					secondary: '#5546dd',
+					tertiary: '#4231c8',
 					accent: '#F97316',
 					light: '#F1F0FB',
 					dark: '#1A1F2C',
@@ -75,7 +75,9 @@ export default {
 			borderRadius: {
 				lg: 'var(--radius)',
 				md: 'calc(var(--radius) - 2px)',
-				sm: 'calc(var(--radius) - 4px)'
+				sm: 'calc(var(--radius) - 4px)',
+				xl: '1rem',
+				'2xl': '1.5rem',
 			},
 			keyframes: {
 				"accordion-down": {
@@ -106,16 +108,29 @@ export default {
 						transform: "translateY(10px)"
 					}
 				},
+				"float": {
+					"0%, 100%": {
+						transform: "translateY(0)",
+					},
+					"50%": {
+						transform: "translateY(-10px)",
+					},
+				},
 			},
 			animation: {
 				"accordion-down": "accordion-down 0.2s ease-out",
 				"accordion-up": "accordion-up 0.2s ease-out",
 				"fade-in": "fade-in 0.3s ease-out",
 				"fade-out": "fade-out 0.3s ease-out",
+				"float": "float 5s ease-in-out infinite",
 			},
 			fontFamily: {
 				poppins: ['Poppins', 'sans-serif'],
 				inter: ['Inter', 'sans-serif'],
+			},
+			boxShadow: {
+				'soft': '0 4px 20px rgba(0,0,0,0.05)',
+				'glow': '0 0 15px rgba(118, 103, 241, 0.5)',
 			}
 		},
 	},
