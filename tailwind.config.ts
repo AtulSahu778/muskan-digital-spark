@@ -64,12 +64,12 @@ export default {
 					ring: 'hsl(var(--sidebar-ring))'
 				},
 				muskan: {
-					primary: '#7667f1',
-					secondary: '#5546dd',
-					tertiary: '#4231c8',
-					accent: '#F97316',
+					primary: '#4F46E5',
+					secondary: '#4338CA',
+					tertiary: '#3730A3',
+					accent: '#F59E0B',
 					light: '#F1F0FB',
-					dark: '#1A1F2C',
+					dark: '#1E293B',
 				}
 			},
 			borderRadius: {
@@ -127,10 +127,12 @@ export default {
 			fontFamily: {
 				poppins: ['Poppins', 'sans-serif'],
 				inter: ['Inter', 'sans-serif'],
+				montserrat: ['Montserrat', 'sans-serif'],
 			},
 			boxShadow: {
 				'soft': '0 4px 20px rgba(0,0,0,0.05)',
-				'glow': '0 0 15px rgba(118, 103, 241, 0.5)',
+				'glow': '0 0 15px rgba(79, 70, 229, 0.5)',
+				'card': '0 10px 30px rgba(0, 0, 0, 0.08)',
 			}
 		},
 	},

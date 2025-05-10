@@ -46,14 +46,14 @@ const Navbar = () => {
               <li key={link.name}>
                 <a 
                   href={link.href} 
-                  className="font-medium text-gray-700 hover:text-muskan-primary transition-colors animated-link"
+                  className="font-medium text-gray-700 hover:text-indigo-600 transition-colors animated-link"
                 >
                   {link.name}
                 </a>
               </li>
             ))}
           </ul>
-          <Button className="bg-gradient-to-r from-muskan-primary to-muskan-tertiary hover:shadow-lg text-white flex items-center gap-2 rounded-full px-6">
+          <Button className="bg-indigo-600 hover:bg-indigo-700 hover:shadow-lg text-white flex items-center gap-2 rounded-md px-6">
             <Phone className="h-4 w-4" />
             <span>Call Now</span>
           </Button>
@@ -76,7 +76,7 @@ const Navbar = () => {
               <li key={link.name} className="px-6 py-3" style={{ animationDelay: `${index * 0.05}s` }}>
                 <a 
                   href={link.href} 
-                  className="font-medium text-gray-700 hover:text-muskan-primary transition-colors block"
+                  className="font-medium text-gray-700 hover:text-indigo-600 transition-colors block"
                   onClick={() => setIsMenuOpen(false)}
                 >
                   {link.name}
@@ -84,7 +84,7 @@ const Navbar = () => {
               </li>
             ))}
             <li className="px-6 py-3">
-              <Button className="bg-gradient-to-r from-muskan-primary to-muskan-tertiary hover:shadow-lg text-white w-full flex items-center justify-center gap-2 rounded-full">
+              <Button className="bg-indigo-600 hover:bg-indigo-700 hover:shadow-lg text-white w-full flex items-center justify-center gap-2 rounded-md">
                 <Phone className="h-4 w-4" />
                 <span>Call Now</span>
               </Button>

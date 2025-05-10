@@ -11,7 +11,7 @@ import WhatsAppButton from '../components/WhatsAppButton';
 
 const Index = () => {
   return (
-    <div className="flex flex-col min-h-screen bg-gradient-to-br from-white to-blue-50/30">
+    <div className="flex flex-col min-h-screen">
       <Navbar />
       <main className="flex-grow">
         <HeroSection />
