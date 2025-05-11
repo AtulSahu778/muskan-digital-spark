@@ -1,5 +1,5 @@
 
-import React from 'react';
+import React, { useState } from 'react';
 import {
   Dialog,
   DialogContent,
@@ -17,8 +17,15 @@ interface BookingModalProps {
 }
 
 const BookingModal = ({ triggerText, service }: BookingModalProps) => {
+  const [open, setOpen] = useState(false);
+  
+  const handleSuccess = () => {
+    // Close the modal after successful submission
+    setOpen(false);
+  };
+  
   return (
-    <Dialog>
+    <Dialog open={open} onOpenChange={setOpen}>
       <DialogTrigger asChild>
         <Button className="btn-primary">{triggerText}</Button>
       </DialogTrigger>
@@ -29,7 +36,7 @@ const BookingModal = ({ triggerText, service }: BookingModalProps) => {
             Fill out the form below to book your service. We'll get back to you shortly to confirm your appointment.
           </DialogDescription>
         </DialogHeader>
-        <BookingForm />
+        <BookingForm preselectedService={service} onSuccess={handleSuccess} />
       </DialogContent>
     </Dialog>
   );

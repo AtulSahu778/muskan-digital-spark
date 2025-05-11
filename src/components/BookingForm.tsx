@@ -7,6 +7,7 @@ import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
 import { useToast } from "@/hooks/use-toast";
+import { supabase } from "@/integrations/supabase/client";
 import {
   Form,
   FormControl,
@@ -35,7 +36,12 @@ const bookingFormSchema = z.object({
 
 type BookingFormValues = z.infer<typeof bookingFormSchema>;
 
-const BookingForm = () => {
+interface BookingFormProps {
+  preselectedService?: string;
+  onSuccess?: () => void;
+}
+
+const BookingForm = ({ preselectedService, onSuccess }: BookingFormProps) => {
   const { toast } = useToast();
   const form = useForm<BookingFormValues>({
     resolver: zodResolver(bookingFormSchema),
@@ -43,33 +49,32 @@ const BookingForm = () => {
       name: "",
       email: "",
       phone: "",
-      service: "",
+      service: preselectedService || "",
       date: "",
       message: "",
     },
   });
+  
+  const isSubmitting = form.formState.isSubmitting;
 
   const onSubmit = async (data: BookingFormValues) => {
-    console.log("Form data:", data);
-    
-    // Google Form submission
-    // Replace with your actual Google Form URL
-    const googleFormUrl = "https://docs.google.com/forms/u/0/d/e/1FAIpQLScYHNR7cHm-VEbAz9m2HAEAs6rZF6rIjQKVmIQQhgGTvXwJyg/formResponse";
-    
-    // Map form fields to Google Form field names (entry.xxxxx)
-    // You'll need to get these from your actual Google Form
-    const formData = new FormData();
-    formData.append('entry.123456789', data.name); // Replace with actual entry IDs
-    formData.append('entry.987654321', data.email); // Replace with actual entry IDs
-    formData.append('entry.135792468', data.phone); // Replace with actual entry IDs
-    formData.append('entry.246813579', data.service); // Replace with actual entry IDs
-    formData.append('entry.975318642', data.date); // Replace with actual entry IDs
-    formData.append('entry.159753486', data.message || ''); // Replace with actual entry IDs
-    
     try {
-      // Due to CORS restrictions, we can't directly post to Google Forms
-      // Instead, we'll show a success message and provide instructions
-      // In a real app, you'd use a proxy server or Supabase Edge Function
+      // Save booking data to Supabase
+      const { error } = await supabase
+        .from('bookings')
+        .insert([{
+          name: data.name,
+          email: data.email,
+          phone: data.phone,
+          service: data.service,
+          date: data.date,
+          message: data.message || ''
+        }]);
+      
+      if (error) {
+        console.error("Error submitting form:", error);
+        throw error;
+      }
       
       toast({
         title: "Booking Request Received",
@@ -78,8 +83,9 @@ const BookingForm = () => {
       
       form.reset();
       
-      // Here you would typically send the data through an edge function or backend
-      // For now, we'll just simulate a successful submission
+      if (onSuccess) {
+        onSuccess();
+      }
       
     } catch (error) {
       console.error("Error submitting form:", error);
@@ -201,9 +207,9 @@ const BookingForm = () => {
         <Button 
           type="submit" 
           className="w-full btn-primary"
-          disabled={form.formState.isSubmitting}
+          disabled={isSubmitting}
         >
-          {form.formState.isSubmitting ? "Submitting..." : "Book Service"}
+          {isSubmitting ? "Submitting..." : "Book Service"}
         </Button>
       </form>
     </Form>
