@@ -2,6 +2,7 @@
 import React from 'react';
 import { Button } from "@/components/ui/button";
 import { Camera, Smartphone, Printer } from "lucide-react";
+import BookingModal from './BookingModal';
 
 const HeroSection = () => {
   return (
@@ -25,10 +26,8 @@ const HeroSection = () => {
               Photography, Phone Repairs, Printing Services & Electronics - All Under One Roof in Jaldega, Simdega
             </p>
             <div className="flex flex-wrap gap-4">
-              <Button className="btn-primary px-8 py-6 rounded-md">
-                Book a Service
-              </Button>
-              <Button variant="outline" className="btn-outline px-8 py-6 rounded-md">
+              <BookingModal triggerText="Book a Service" />
+              <Button variant="outline" className="btn-outline px-8 py-6 rounded-md" onClick={() => document.getElementById('services')?.scrollIntoView({ behavior: 'smooth' })}>
                 Explore Services
               </Button>
             </div>

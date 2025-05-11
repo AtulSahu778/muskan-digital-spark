@@ -1,7 +1,8 @@
 
 import React from 'react';
 import { Camera, Smartphone, Printer, ShoppingBag, BookOpen } from "lucide-react";
-import { Card, CardContent, CardDescription, CardFooter, CardHeader, CardTitle } from "@/components/ui/card";
+import ServiceCard from './ServiceCard';
+import { motion } from 'framer-motion';
 
 const ServicesSection = () => {
   const services = [
@@ -40,45 +41,28 @@ const ServicesSection = () => {
   return (
     <section id="services" className="section bg-gray-50">
       <div className="container">
-        <div className="text-center mb-16">
+        <motion.div 
+          className="text-center mb-16"
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.5 }}
+          viewport={{ once: true }}
+        >
           <h2 className="text-3xl md:text-4xl font-bold mb-4">Our <span className="text-muskan-primary">Services</span></h2>
           <p className="text-gray-600 max-w-2xl mx-auto">
             Muskan Digital Studio offers a wide range of digital and physical services to meet all your needs under one roof
           </p>
-        </div>
+        </motion.div>
 
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
           {services.map((service, index) => (
-            <Card key={index} className="service-card border border-gray-200 hover:shadow-lg overflow-hidden">
-              <CardHeader className="pb-4">
-                <div className="mb-3">
-                  {service.icon}
-                </div>
-                <CardTitle>{service.title}</CardTitle>
-                <CardDescription className="text-gray-600">{service.description}</CardDescription>
-              </CardHeader>
-              <CardContent>
-                <ul className="space-y-2">
-                  {service.features.map((feature, featureIndex) => (
-                    <li key={featureIndex} className="flex items-center">
-                      <span className="h-1.5 w-1.5 rounded-full bg-muskan-primary mr-2"></span>
-                      <span>{feature}</span>
-                    </li>
-                  ))}
-                </ul>
-              </CardContent>
-              <CardFooter>
-                <a 
-                  href="#contact" 
-                  className="text-muskan-primary font-medium hover:underline inline-flex items-center"
-                >
-                  Learn more
-                  <svg className="ml-1 w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M9 5l7 7-7 7"></path>
-                  </svg>
-                </a>
-              </CardFooter>
-            </Card>
+            <ServiceCard
+              key={index}
+              icon={service.icon}
+              title={service.title}
+              description={service.description}
+              features={service.features}
+            />
           ))}
         </div>
       </div>
