@@ -47,10 +47,10 @@ const ContactSection = () => {
     {
       icon: <Phone className="h-5 w-5 text-muskan-primary" />,
       title: "Call Us",
-      details: ["+91 9876543210", "+91 8765432109"],
+      details: ["+91 94301 43045", "+91 99057 79464"],
       action: {
         text: "Call now",
-        href: "tel:+919876543210"
+        href: "tel:+919430143045"
       }
     },
     {
@@ -68,7 +68,7 @@ const ContactSection = () => {
       details: ["Main Road, Near District Court", "Jaldega, Simdega, Jharkhand - 835227"],
       action: {
         text: "Get directions",
-        href: "https://maps.google.com"
+        href: "https://maps.app.goo.gl/v3JEj1tdcxfjPmCR7"
       }
     },
     {
@@ -217,16 +217,17 @@ const ContactSection = () => {
 
         <div className="mt-16">
           <div className="bg-gray-100 p-2 rounded-lg shadow">
-            <iframe
-              title="Muskan Digital Studio Location"
-              src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d14569.740129460438!2d84.2572215!3d22.9666483!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3a23c89063e745b7%3A0xffb8c7f67ef34bb5!2sJaldega%2C%20Jharkhand%20835227!5e0!3m2!1sen!2sin!4v1651234567890!5m2!1sen!2sin"
-              width="100%"
-              height="400"
-              style={{ border: 0 }}
-              allowFullScreen
-              loading="lazy"
-              referrerPolicy="no-referrer-when-downgrade"
-            />
+        <iframe
+        title="Muskan Studio Location"
+        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d899.1917257013918!2d84.81220813971699!3d22.576742032763214!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x398aa84c6aaaaaab%3A0x622d2e6223e1bdfb!2sMuskan%20Studio!5e1!3m2!1sen!2sin!4v1746964363384!5m2!1sen!2sin"
+        width="100%"
+        height="400"
+        style={{ border: 0 }}
+        allowFullScreen
+        loading="lazy"
+        referrerPolicy="no-referrer-when-downgrade"
+        />
+
           </div>
         </div>
       </div>

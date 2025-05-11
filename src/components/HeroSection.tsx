@@ -59,7 +59,7 @@ const HeroSection = () => {
           <div className="w-full md:w-1/2 relative">
             <div className="relative z-10 floating">
               <img 
-                src="https://images.unsplash.com/photo-1542038784456-1ea8e935640e?ixlib=rb-4.0.3&auto=format&fit=crop&w=1000&q=80" 
+                src="/sandeepji.jpg" 
                 alt="Muskan Digital Studio" 
                 className="rounded-lg shadow-card w-full h-auto"
               />
