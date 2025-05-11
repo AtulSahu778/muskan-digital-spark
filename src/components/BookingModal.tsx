@@ -27,7 +27,9 @@ const BookingModal = ({ triggerText, service }: BookingModalProps) => {
   return (
     <Dialog open={open} onOpenChange={setOpen}>
       <DialogTrigger asChild>
-        <Button className="btn-primary">{triggerText}</Button>
+        <Button className="bg-muskan-primary hover:bg-muskan-secondary text-white text-sm px-4 py-2 rounded-md transition-colors">
+          {triggerText}
+        </Button>
       </DialogTrigger>
       <DialogContent className="sm:max-w-[600px] max-h-[90vh] overflow-y-auto">
         <DialogHeader>
