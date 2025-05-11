@@ -47,7 +47,7 @@ const ContactSection = () => {
     {
       icon: <Phone className="h-5 w-5 text-muskan-primary" />,
       title: "Call Us",
-      details: ["+91 94301 43045", "+91 99057 79464"],
+      details: ["+91 94301 43045, +91 99057 79464"],
       action: {
         text: "Call now",
         href: "tel:+919430143045"
@@ -56,16 +56,16 @@ const ContactSection = () => {
     {
       icon: <Mail className="h-5 w-5 text-muskan-primary" />,
       title: "Email Us",
-      details: ["contact@muskandigital.com", "info@muskandigital.com"],
+      details: ["muskanstudio04@gmail.com"],
       action: {
         text: "Send email",
-        href: "mailto:contact@muskandigital.com"
+        href: "mailto:muskanstudio04@gmail.com"
       }
     },
     {
       icon: <MapPin className="h-5 w-5 text-muskan-primary" />,
       title: "Visit Us",
-      details: ["Main Road, Near District Court", "Jaldega, Simdega, Jharkhand - 835227"],
+      details: ["Opp, Block Office, Jaldega, Jharkhand 835211"],
       action: {
         text: "Get directions",
         href: "https://maps.app.goo.gl/v3JEj1tdcxfjPmCR7"
@@ -120,99 +120,7 @@ const ContactSection = () => {
             ))}
           </div>
 
-          <div className="lg:col-span-2">
-            <div className="bg-white p-8 rounded-lg shadow-lg">
-              <h3 className="text-2xl font-semibold mb-6">Send us a Message</h3>
-              <form onSubmit={handleSubmit} className="space-y-6">
-                <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-                  <div className="space-y-2">
-                    <label htmlFor="name" className="block text-sm font-medium text-gray-700">
-                      Full Name
-                    </label>
-                    <Input
-                      id="name"
-                      name="name"
-                      value={formData.name}
-                      onChange={handleChange}
-                      placeholder="Your full name"
-                      required
-                    />
-                  </div>
-                  
-                  <div className="space-y-2">
-                    <label htmlFor="email" className="block text-sm font-medium text-gray-700">
-                      Email Address
-                    </label>
-                    <Input
-                      id="email"
-                      name="email"
-                      type="email"
-                      value={formData.email}
-                      onChange={handleChange}
-                      placeholder="your.email@example.com"
-                      required
-                    />
-                  </div>
-                </div>
-                
-                <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-                  <div className="space-y-2">
-                    <label htmlFor="phone" className="block text-sm font-medium text-gray-700">
-                      Phone Number
-                    </label>
-                    <Input
-                      id="phone"
-                      name="phone"
-                      value={formData.phone}
-                      onChange={handleChange}
-                      placeholder="Your phone number"
-                      required
-                    />
-                  </div>
-                  
-                  <div className="space-y-2">
-                    <label htmlFor="service" className="block text-sm font-medium text-gray-700">
-                      Service Interested In
-                    </label>
-                    <Select value={formData.service} onValueChange={handleSelectChange} required>
-                      <SelectTrigger>
-                        <SelectValue placeholder="Select a service" />
-                      </SelectTrigger>
-                      <SelectContent>
-                        <SelectItem value="photography">Photography & Videography</SelectItem>
-                        <SelectItem value="repair">Phone Repair</SelectItem>
-                        <SelectItem value="printing">Printing Services</SelectItem>
-                        <SelectItem value="electronics">Electronics & Accessories</SelectItem>
-                        <SelectItem value="stationery">Stationery & Supplies</SelectItem>
-                        <SelectItem value="other">Other</SelectItem>
-                      </SelectContent>
-                    </Select>
-                  </div>
-                </div>
-                
-                <div className="space-y-2">
-                  <label htmlFor="message" className="block text-sm font-medium text-gray-700">
-                    Your Message
-                  </label>
-                  <Textarea
-                    id="message"
-                    name="message"
-                    value={formData.message}
-                    onChange={handleChange}
-                    placeholder="Tell us about your requirements..."
-                    rows={5}
-                    required
-                  />
-                </div>
-                
-                <div>
-                  <Button type="submit" className="w-full bg-muskan-primary hover:bg-muskan-tertiary text-white">
-                    Send Message
-                  </Button>
-                </div>
-              </form>
-            </div>
-          </div>
+          
         </div>
 
         <div className="mt-16">

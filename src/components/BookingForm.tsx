@@ -1,5 +1,4 @@
-
-import React from 'react';
+import React, { useRef, useEffect } from 'react';
 import { useForm } from 'react-hook-form';
 import { z } from 'zod';
 import { zodResolver } from '@hookform/resolvers/zod';
@@ -7,7 +6,7 @@ import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
 import { useToast } from "@/hooks/use-toast";
-import { supabase } from "@/integrations/supabase/client";
+import emailjs from '@emailjs/browser'; // Import EmailJS
 import {
   Form,
   FormControl,
@@ -43,6 +42,7 @@ interface BookingFormProps {
 
 const BookingForm = ({ preselectedService, onSuccess }: BookingFormProps) => {
   const { toast } = useToast();
+  const formRef = useRef<HTMLFormElement>(null);
   const form = useForm<BookingFormValues>({
     resolver: zodResolver(bookingFormSchema),
     defaultValues: {
@@ -55,36 +55,55 @@ const BookingForm = ({ preselectedService, onSuccess }: BookingFormProps) => {
     },
   });
   
+  // Initialize EmailJS - only needed if you haven't added the script in your HTML
+  useEffect(() => {
+    emailjs.init({
+      publicKey: "T_reHJTgfCtj6HitG", // Your public key
+    });
+  }, []);
+  
   const isSubmitting = form.formState.isSubmitting;
 
   const onSubmit = async (data: BookingFormValues) => {
     try {
-      // Save booking data to Supabase
-      const { error } = await supabase
-        .from('bookings')
-        .insert([{
-          name: data.name,
-          email: data.email,
-          phone: data.phone,
-          service: data.service,
-          date: data.date,
-          message: data.message || ''
-        }]);
+      // Prepare template parameters
+      const templateParams = {
+        from_name: data.name,
+        from_email: data.email,
+        phone: data.phone,
+        service: data.service,
+        date: data.date,
+        message: data.message || 'No additional message',
+        reply_to: data.email,
+        // Don't include to_email here - specify this in the EmailJS template itself
+      };
       
-      if (error) {
-        console.error("Error submitting form:", error);
-        throw error;
-      }
+      console.log("Submitting form with data:", templateParams);
+      console.log("Using service ID, template ID:", 'service_xxxxxxx', 'template_ime82jm');
       
-      toast({
-        title: "Booking Request Received",
-        description: "Thank you for your booking request. We will contact you shortly to confirm your appointment.",
-      });
+      // Send email using EmailJS
+      const response = await emailjs.send(
+        'service_u3uql8t', // Replace with your actual service ID from EmailJS dashboard
+        'template_ime82jm', // Your template ID seems correct
+        templateParams,
+        'T_reHJTgfCtj6HitG' // Your public key
+      );
       
-      form.reset();
+      console.log("EmailJS response:", response);
       
-      if (onSuccess) {
-        onSuccess();
+      if (response.status === 200) {
+        toast({
+          title: "Booking Request Received",
+          description: "Thank you for your booking request. We will contact you shortly to confirm your appointment.",
+        });
+        
+        form.reset();
+        
+        if (onSuccess) {
+          onSuccess();
+        }
+      } else {
+        throw new Error('Email not sent, status: ' + response.status);
       }
       
     } catch (error) {
@@ -99,7 +118,7 @@ const BookingForm = ({ preselectedService, onSuccess }: BookingFormProps) => {
 
   return (
     <Form {...form}>
-      <form onSubmit={form.handleSubmit(onSubmit)} className="space-y-6 p-6 bg-white rounded-lg shadow-lg">
+      <form ref={formRef} onSubmit={form.handleSubmit(onSubmit)} className="space-y-6 p-6 bg-white rounded-lg shadow-lg">
         <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
           <FormField
             control={form.control}

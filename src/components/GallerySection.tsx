@@ -22,11 +22,9 @@ const GallerySection = () => {
       label: "Printing",
       images: [
         "https://t3.ftcdn.net/jpg/00/89/06/80/240_F_89068008_XurvR1bKCuZbrkcIzkC8Fk1fxhdBB8rY.jpg",
-        "https://t3.ftcdn.net/jpg/02/79/90/56/240_F_279905660_pSbYgd4liV4xbqr1adXCMOSGleE3YDdD.jpg",
-        "https://images.unsplash.com/photo-1611032065123-ebb3220ad5ed?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80",
-        "https://images.unsplash.com/photo-1601045569976-704cdf56c65a?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80",
-        "https://images.unsplash.com/photo-1574170607426-48bcb996714e?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80",
-        "https://images.unsplash.com/photo-1571498664957-fde9fa4d5158?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80",
+        "https://images.pexels.com/photos/30921929/pexels-photo-30921929/free-photo-of-elegant-traditional-indian-wedding-invitation-card.jpeg?auto=compress&cs=tinysrgb&w=600",
+        "https://t3.ftcdn.net/jpg/00/52/76/22/240_F_52762278_xZPlJuEZQCNw4e9bQgv5eB4BD5dd34ir.jpg",
+        "https://t3.ftcdn.net/jpg/07/32/42/24/240_F_732422498_GczZX79vY8YUYc0rjycGd0mLUdl4SeMS.jpg",
       ],
     },
     {

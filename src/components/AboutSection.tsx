@@ -4,9 +4,9 @@ import { CheckCircle, Clock, MapPin } from "lucide-react";
 
 const AboutSection = () => {
   const businessHours = [
-    { day: "Monday - Friday", hours: "9:00 AM - 8:00 PM" },
-    { day: "Saturday", hours: "10:00 AM - 6:00 PM" },
-    { day: "Sunday", hours: "10:00 AM - 2:00 PM" }
+    { day: "Monday - Friday", hours: "8:00 AM - 8:00 PM" },
+    { day: "Saturday", hours: "8:00 AM - 8:00 PM" },
+    { day: "Sunday", hours: "8:00 AM - 8:00 PM" }
   ];
 
   const advantages = [
@@ -60,7 +60,7 @@ const AboutSection = () => {
           <div className="relative">
             <div className="rounded-lg overflow-hidden shadow-xl">
               <img 
-                src="https://images.unsplash.com/photo-1497215728101-856f4ea42174?ixlib=rb-4.0.3&auto=format&fit=crop&w=1000&q=80" 
+                src="https://lh3.googleusercontent.com/p/AF1QipOcElwyn4U9Yt20b00LG-vyp8LNvMwNYsqW6fKl=s1360-w1360-h1020-rw" 
                 alt="Muskan Digital Studio Shop" 
                 className="w-full h-auto"
               />
@@ -72,7 +72,7 @@ const AboutSection = () => {
                 <div>
                   <h4 className="font-semibold mb-1">Location</h4>
                   <p className="text-gray-600 text-sm">
-                    Main Road, Near District Court, Jaldega, Simdega, Jharkhand - 835227
+                  Opp, Block office, Jaldega, Jharkhand 835211
                   </p>
                 </div>
               </div>
