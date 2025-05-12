@@ -1,19 +1,14 @@
-
 import React, { useState, useEffect } from 'react';
-import { Button } from "@/components/ui/button";
 import { Menu, X, Phone } from "lucide-react";
 
 const Navbar = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [isScrolled, setIsScrolled] = useState(false);
+  const phoneNumber = "+919430143045"; // Your actual phone number
 
   useEffect(() => {
     const handleScroll = () => {
-      if (window.scrollY > 20) {
-        setIsScrolled(true);
-      } else {
-        setIsScrolled(false);
-      }
+      setIsScrolled(window.scrollY > 20);
     };
 
     window.addEventListener('scroll', handleScroll);
@@ -53,10 +48,14 @@ const Navbar = () => {
               </li>
             ))}
           </ul>
-          <Button className="bg-indigo-600 hover:bg-indigo-700 hover:shadow-lg text-white flex items-center gap-2 rounded-md px-6">
+
+          <a
+            href={`tel:${phoneNumber}`}
+            className="bg-indigo-600 hover:bg-indigo-700 text-white flex items-center gap-2 rounded-md px-6 py-2 transition-colors"
+          >
             <Phone className="h-4 w-4" />
             <span>Call Now</span>
-          </Button>
+          </a>
         </div>
 
         {/* Mobile Navigation Toggle */}
@@ -84,10 +83,13 @@ const Navbar = () => {
               </li>
             ))}
             <li className="px-6 py-3">
-              <Button className="bg-indigo-600 hover:bg-indigo-700 hover:shadow-lg text-white w-full flex items-center justify-center gap-2 rounded-md">
+              <a 
+                href={`tel:${phoneNumber}`}
+                className="bg-indigo-600 hover:bg-indigo-700 text-white w-full flex items-center justify-center gap-2 rounded-md py-2 transition-colors"
+              >
                 <Phone className="h-4 w-4" />
                 <span>Call Now</span>
-              </Button>
+              </a>
             </li>
           </ul>
         </div>

@@ -77,7 +77,7 @@ const ContactSection = () => {
       details: ["Chat with us directly", "Quick responses guaranteed"],
       action: {
         text: "WhatsApp now",
-        href: "https://wa.me/919876543210"
+        href: "https://wa.me/919430143045"
       }
     }
   ];
