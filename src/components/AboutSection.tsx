@@ -25,7 +25,7 @@ const AboutSection = () => {
           <div>
             <h2 className="text-3xl md:text-4xl font-bold mb-6">About <span className="text-muskan-primary">Muskan Digital Studio</span></h2>
             <p className="text-gray-600 mb-6">
-              Founded with a vision to provide comprehensive digital services to the people of Jaldega and nearby areas, Muskan Digital Studio has been serving the community since 2018. Our mission is to deliver high-quality photography, repair, and printing services at affordable prices.
+              Founded with a vision to provide comprehensive digital services to the people of Jaldega and nearby areas, Muskan Digital Studio has been serving the community since 2004. Our mission is to deliver high-quality photography, repair, and printing services at affordable prices.
             </p>
             <p className="text-gray-600 mb-8">
               What started as a small photography studio has now grown into a multi-service hub catering to all digital and electronic needs of our customers. We take pride in our work and strive for customer satisfaction in everything we do.
