@@ -1,73 +1,76 @@
-# Welcome to your Lovable project
+# Muskan Digital Studio – Official Website
 
-## Project info
+Live Link: https://muskan-digital-studio.vercel.app/
 
-**URL**: https://lovable.dev/projects/bcbee914-46af-47b4-942f-9275802aefb6
+A modern, responsive website for **Muskan Digital Studio**, based in **Jaldega, Simdega, Jharkhand**. The studio offers a variety of services including photography, videography, mobile phone repair, printing, and sales of electronics and stationery.
 
-## How can I edit this code?
+---
 
-There are several ways of editing your application.
+## 🛠️ Tech Stack
 
-**Use Lovable**
+- **React** – for building user interfaces  
+- **TypeScript** – for static type checking  
+- **Vite** – fast frontend tooling  
+- **Tailwind CSS** – utility-first CSS framework  
+- **shadcn/ui** – beautiful UI components  
 
-Simply visit the [Lovable Project](https://lovable.dev/projects/bcbee914-46af-47b4-942f-9275802aefb6) and start prompting.
+---
 
-Changes made via Lovable will be committed automatically to this repo.
+## ⚙️ Getting Started Locally
 
-**Use your preferred IDE**
+### Prerequisites
 
-If you want to work locally using your own IDE, you can clone this repo and push changes. Pushed changes will also be reflected in Lovable.
+Make sure you have **Node.js** and **npm** installed.
 
-The only requirement is having Node.js & npm installed - [install with nvm](https://github.com/nvm-sh/nvm#installing-and-updating)
+We recommend using [nvm](https://github.com/nvm-sh/nvm) to manage Node versions.
 
-Follow these steps:
+### Steps
 
-```sh
-# Step 1: Clone the repository using the project's Git URL.
-git clone <YOUR_GIT_URL>
+```bash
+# 1. Clone the repository
+git clone <your-repo-url>
 
-# Step 2: Navigate to the project directory.
-cd <YOUR_PROJECT_NAME>
+# 2. Navigate into the project directory
+cd muskan-digital-studio
 
-# Step 3: Install the necessary dependencies.
-npm i
+# 3. Install dependencies
+npm install
 
-# Step 4: Start the development server with auto-reloading and an instant preview.
+# 4. Start the development server
 npm run dev
-```
+Visit http://localhost:5173 in your browser to see the site running.
 
-**Edit a file directly in GitHub**
+🌐 Deployment
+You can deploy this project using any static hosting service such as:
 
-- Navigate to the desired file(s).
-- Click the "Edit" button (pencil icon) at the top right of the file view.
-- Make your changes and commit the changes.
+Vercel
 
-**Use GitHub Codespaces**
+Netlify
 
-- Navigate to the main page of your repository.
-- Click on the "Code" button (green button) near the top right.
-- Select the "Codespaces" tab.
-- Click on "New codespace" to launch a new Codespace environment.
-- Edit files directly within the Codespace and commit and push your changes once you're done.
+GitHub Pages
 
-## What technologies are used for this project?
+📁 Project Structure
+graphql
+Copy code
+src/
+├── components/         # Reusable components
+├── pages/              # Route-level components
+├── styles/             # Tailwind CSS and custom styles
+├── assets/             # Images, icons, etc.
+└── main.tsx            # Entry point
+📸 Studio Services
+Photography & Videography
 
-This project is built with:
+Phone Repair
 
-- Vite
-- TypeScript
-- React
-- shadcn-ui
-- Tailwind CSS
+Printing (Photos, Banners, ID Cards)
 
-## How can I deploy this project?
+Stationery & Electronics Sales
 
-Simply open [Lovable](https://lovable.dev/projects/bcbee914-46af-47b4-942f-9275802aefb6) and click on Share -> Publish.
+📍 Location
+Jaldega, Simdega District, Jharkhand, India
 
-## Can I connect a custom domain to my Lovable project?
+🧑‍💻 Maintainer
+Muskan Digital Studio
+Contact: [Add your phone/email here]
 
-Yes, you can!
-
-To connect a domain, navigate to Project > Settings > Domains and click Connect Domain.
-
-Read more here: [Setting up a custom domain](https://docs.lovable.dev/tips-tricks/custom-domain#step-by-step-guide)
